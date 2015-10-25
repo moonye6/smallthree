@@ -17,6 +17,8 @@ $(function() {
 
 function init () {
 
+	IS_OVER = false;
+	
 	updateScore(true);
 
 	if(points) {
