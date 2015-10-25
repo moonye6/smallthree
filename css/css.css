@@ -1,0 +1,93 @@
+@charset "utf-8";
+
+html,body,div,p,span {
+	margin: 0;
+	padding: 0;
+	font-family: "微软雅黑","cursive";
+}
+
+
+header {
+	text-align: center;
+	width: 100%;
+	margin-top: 20px;
+	color:#333;
+	font-size: 36px;
+}
+ .p_newgame {
+ 	text-align: center;
+ 	float: left;
+ }
+
+ .newgame {
+ 	font-size: 16px;
+ 	display: inline-block;
+ 	vertical-align: middle;
+ 	color: white;
+ 	text-decoration: none;
+ 	background-color: #ffcc65;
+ 	width: 120px;
+ 	line-height: 40px;
+ }
+
+.score-container {
+	width: 256px;
+	margin: 10px auto;
+	font-size: 30px;
+}
+.p_score {
+	float: right;
+	font-size: 18px;
+	line-height: 40px;
+}
+.score {
+	font-size: 16px;
+	color: red;
+}
+
+
+
+.clear:after {
+	clear: both;
+	display: block;
+	content:'';
+	overflow: hidden;
+}
+
+.box-container {
+	width: 256px;
+	margin: 0 auto;
+	background-color: #eaeaea;
+	position: relative;
+}
+.cell {
+	border-radius: 6px;
+	background-color: #dbdbdb;
+	width: 60px;
+	height: 90px;
+	margin: 2px;
+	float: left;
+	overflow: hidden;
+}
+.num {
+	display: inline-block;
+	vertical-align: middle;
+	width: 100%;
+	line-height: 90px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 38px;
+
+}
+.num-2 {
+	background-color: #ff6680;
+	color: white;
+}
+.num-1 {
+	background-color: #66ccff;
+	color: white;
+}
+.num-x {
+	background-color: #fcfcfc;
+	color: black;
+}
