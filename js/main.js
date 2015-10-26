@@ -76,13 +76,16 @@ function generateNum (l, d) {
 		list=[1];
 	}
 
-	var n = getNum(l),
+	var domId,
+		n = getNum(l),
 		direct = typeof d === 'undefined' ? getPos(): d,
-		pos= points.getRandomPos(direct, n), 
+		pos= points.getRandomPos(direct, n);
+
+	if(pos) {
 		domId = points.getDomId(pos.row, pos.col);
-
-	$(domId).html(wrapNum(n));
-
+		$(domId).html(wrapNum(n));
+	}
+		
 	setTimeout(function () {
 		checkOver();
 	}, 300);
@@ -308,7 +311,7 @@ Points.prototype.getRandomPos = function (direct, v) {
 		}
 	} while(!this.isValidPosAndValue(row, col));
 
-	if(!row && !col) {
+	if(!this.isValidPosAndValue(row, col)) {
 		for(var i = 0; i < this.maxRows; i ++) {
 			for(var j = 0; j < this.maxCols; j++) {
 				if(this.points[i][j] === 0) {
@@ -318,9 +321,10 @@ Points.prototype.getRandomPos = function (direct, v) {
 			}
 		}
 	}
-	if(!row && !col) {
-		IS_OVER = true;
-		console.log("over");
+
+	if(!this.isValidPosAndValue(row, col)) {
+		// IS_OVER = true;
+		console.log("this direct is over");
 		return;
 	}
 	this.setValue(row, col, v);
@@ -334,4 +338,8 @@ Points.prototype.toString = function (r, c) {
 			console.log('i: '+i+', j: '+j+', value: ' + this.points[i][j]);
 		}
 	}
+}
+
+function isNumber (s) {
+	return typeof s === 'number';
 }
