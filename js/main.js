@@ -205,7 +205,7 @@ function checkOver () {
 	}
 	for (var i = 0; i <= 3; i++) {
 		for (var j = 0; j <= 3; j++) {
-			if(this.points.getValue(i, j) === 0) {
+			if(points.getValue(i, j) === 0) {
 				return false;
 			}
 			//判断右边能否merge
